@@ -18,7 +18,7 @@ export default class Breadcrumb extends Vue {
 
   private getRouteMatched(): void {
     const matched: any = this.$route.matched.filter(
-      (item: { [propsName: string]: any }, index: number) => item.name && index !== 0
+      (item: { [propsName: string]: any }, index: number) => item?.meta?.title && index !== 0
     )
     this.breadcrumbData = matched
   }

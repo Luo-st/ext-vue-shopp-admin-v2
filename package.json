@@ -17,6 +17,7 @@
     "moment": "^2.27.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
+    "vue-cli": "^2.9.6",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.2.0",
     "vue-styled-components": "^1.5.1",

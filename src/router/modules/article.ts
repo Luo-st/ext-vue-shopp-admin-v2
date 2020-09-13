@@ -1,6 +1,6 @@
 export default {
   path: 'article',
-  meta: { title: '内容管理' },
+  meta: { title: '文章管理' },
   component: () => import('@/views/Article'),
   children: [
     {

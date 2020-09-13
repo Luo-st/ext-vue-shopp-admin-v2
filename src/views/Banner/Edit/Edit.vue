@@ -65,7 +65,6 @@ export default {
 
     const article = ref<any>({})
     const loading = ref<boolean>(false)
-    // const momentFn = moment
 
     // 初始化数据
     const init = async () => {

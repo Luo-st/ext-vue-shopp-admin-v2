@@ -1,24 +1,20 @@
-import { computed } from '@vue/composition-api'
+import { computed, ref, unref } from '@vue/composition-api'
 import Vue from 'vue'
-
 let runtimeVm: Vue | null = null
+export const useRouter = (root: any) => {
+  const runtimeVmRef = ref(runtimeVm)
+  const router = computed(() => runtimeVm!.$router)
 
-export const useRouter = () => {
-  const route = computed(() => runtimeVm!.$route)
-  return { routeRef: route, router: runtimeVm!.$router }
+  // 跳转
+  // const push = (path: any) => {
+  //   root.$router.push(path)
+  // }
+
+  const push = (path: any) => {
+    unref(router).push(path)
+  }
+
+  return { push }
 }
 
-/**
- * @description: 跳转页面
- */
-export const usePath = ({
-  path = '/',
-  replace = true
-}: {
-  path?: string
-  replace?: boolean
-} = {}) => {
-  const { router } = useRouter()
-  const push: any = replace ? router.replace(path) : router.push(path)
-  return push
-}
+export default useRouter

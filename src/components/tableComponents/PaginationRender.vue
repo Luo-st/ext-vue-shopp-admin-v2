@@ -1,20 +1,24 @@
 <template>
   <a-pagination
     :show-size-changer="false"
-    :page-size="pagination.page_limit"
-    :page_num="pagination.page_num"
-    :total="pagination.data_count"
-    :show-total="total => `共 ${total} 条`"
-    @change="(page_num, page_limit) => paginationChange({ page_num, page_limit })"
+    :page-size="paginationProps.page_limit"
+    :page_num="paginationProps.page_num"
+    :total="paginationProps.total"
+    :show-total="paginationProps.showTotal"
+    @change="(page_num, page_limit) => paginationProps.paginationChange({ page_num, page_limit })"
   />
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
-@Component({})
-export default class PaginationRender extends Vue {
-  @Prop(Object) pagination!: any
-  @Prop(Function) paginationChange!: Function
+import { inject } from '@vue/composition-api'
+export default {
+  setup() {
+    const paginationProps = inject('paginationProps')
+    console.log(paginationProps)
+    return {
+      paginationProps
+    }
+  }
 }
 </script>
 

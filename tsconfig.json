@@ -18,7 +18,10 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "compatible-vue": [
+        "src/setup/vue/index.ts"
+      ],
     },
     "lib": [
       "esnext",

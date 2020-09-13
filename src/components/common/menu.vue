@@ -60,13 +60,17 @@ export default {
           ]
         },
         {
-          title: '文章管理',
+          title: '内容管理',
           key: 'article',
           icon: 'table',
           children: [
             {
               key: 'article/list',
               title: '文章列表'
+            },
+            {
+              key: 'banner/list',
+              title: '轮播图'
             }
           ]
         }
@@ -81,9 +85,7 @@ export default {
       })
     }
   },
-  mounted() {
-    console.log(1)
-  }
+  mounted() {}
 }
 </script>
 

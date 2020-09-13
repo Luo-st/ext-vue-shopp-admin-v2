@@ -50,7 +50,9 @@ const url: {
 
   // ------------ 内容管理 ------------
   // 文章
-  ...createBaseUrl('article', 'articles')
+  ...createBaseUrl('article', 'articles'),
+  // 轮播图
+  ...createBaseUrl('banner', 'banners')
 }
 
 export default url

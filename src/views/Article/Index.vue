@@ -1,5 +1,5 @@
 <template>
-  <router-view :key="$router.fullPath"></router-view>
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
